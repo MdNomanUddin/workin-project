@@ -80,8 +80,11 @@ def upload_image():
     model.setInputParams(scale=1 / 255, size=(640, 480), swapRB=True)
     classIds, scores, boxes = model.detect(img, confThreshold=0.6, nmsThreshold=0.4)
     print("classIds:", classIds)
-    print("scores:", scores)
-    print("boxes:", boxes)
+
+    if len(classIds) > 0:
+        for (classId, score, box) in zip(classIds, scores, boxes):
+            cv.rectangle(img, (box[0], box[1]), (box[0] + box[2], box[1] + box[3]),
+                    color=(129, 255, 268), thickness=1)
 
     # Check if there are any potholes detected
     if len(classIds) > 0:
