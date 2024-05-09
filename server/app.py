@@ -1,8 +1,7 @@
-from flask import Flask, render_template,make_response, request, redirect, url_for, send_from_directory, Response, jsonify
+from flask import Flask, request, jsonify
 import os
 import cv2 as cv
 import geocoder
-import shutil
 from flask_cors import CORS
 import numpy as np
 import base64 
