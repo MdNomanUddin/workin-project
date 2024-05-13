@@ -203,8 +203,8 @@ export default function Complaint() {
 
   return (
     <div>
-      <h2>Submit a Complaint</h2>
-      <form onSubmit={handleSubmit}>
+      <h2 className="text-md text-center text-lg p-5">Submit a Complaint</h2>
+      <form className="border m-10 " onSubmit={handleSubmit}>
         <label>Image:</label>
         <input type="file" id="fileInput" name="file" accept="image/*" onChange={handleImageChange} />
         <div className="flex items-center ">
@@ -237,6 +237,7 @@ export default function Complaint() {
         <div>
           <label>Location:</label>
           <input
+            className="m-5 "
             type="text"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
@@ -264,7 +265,7 @@ export default function Complaint() {
             placeholder="Add supporting comments to your report"
           ></textarea>
         </div>
-        <button type="submit" disabled={hasPotholes === null || !hasPotholes}>Submit</button>
+        <button className="bg-slate-400 flex items-center " type="submit" disabled={hasPotholes === null || !hasPotholes}>Submit</button>
       </form>
     </div>
   );
