@@ -160,6 +160,7 @@ export default function Complaint() {
         complaintId,
         imagePath,
         dateReported: formattedDate,
+        status: "Submitted",
       };
 
       await addDoc(collection(db, "complaints"), complaintData);
@@ -179,10 +180,10 @@ export default function Complaint() {
     const randomId = Math.floor(10000000 + Math.random() * 90000000);
     return `C${randomId.toString().substring(0, 7)}`;
   };
-  
+
 
   const resetFormState = () => { // resets all values after successful submission of form
-   resetImageState();
+    resetImageState();
     setDescription("");
     setLocation("");
     setSeverity(0);
@@ -190,7 +191,7 @@ export default function Complaint() {
   };
 
   const resetImageState = () => {  // resets image state if errors occurs related to uploaded image
-    if(fileInput){
+    if (fileInput) {
       fileInput.value = '';
     }
     console.log("reseting image states");

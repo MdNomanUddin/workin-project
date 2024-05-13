@@ -6,6 +6,7 @@ const Login = lazy(() => import("./pages/Login"));
 const Home = lazy(() => import("./pages/Home"));
 const Complaint = lazy(() => import("./pages/Complaint"));
 const Status = lazy(() => import("./pages/Status"));
+const MyComplaints = lazy(() => import("./pages/MyComplaints"));
 
 const Signup = lazy(() => import("./pages/Signup")); // Import the Signup component
 
@@ -22,6 +23,10 @@ export default function Router() {
         {
           path: "/complaint",
           element: <Complaint/>,
+        },
+        {
+          path: "/MyComplaints",
+          element: <MyComplaints/>,
         },
         {
           path: "/status",
